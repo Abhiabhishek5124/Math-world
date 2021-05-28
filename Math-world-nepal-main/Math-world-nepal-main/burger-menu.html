@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Burger menu icon</title>
+    <meta charset="utf-8" />
+    <style>
+        #burger-menu-icon{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        #burger-menu-icon>input{
+            display: none;
+        }
+        #burger-menu-icon:before, #burger-menu-icon>div, #burger-menu-icon:after{
+            content: "";
+            display: block;
+            margin: auto;
+            width: 100%;
+            height: 20%;
+            border-radius: 10% / 50%;
+            background: black;
+            position: relative;
+            transform-origin: left center;
+            transition: all .5s ease;
+        }
+        #burger-menu-icon:before{
+           top: 10%;
+        }
+        #burger-menu-icon>div{
+            top: 20%;
+        }
+        #burger-menu-icon:after{
+            top: 30%;
+        }
+        #burger-menu-icon.activated:before{
+            transform: rotateZ(37deg);
+        }
+        #burger-menu-icon.activated div{
+            width: 0;
+        }
+        #burger-menu-icon.activated:after{
+            transform: rotateZ(-37deg);
+        }
+    </style>
+</head>
+<body>
+    <span id="burger-menu-icon" onclick="activateBurgerMenu();">
+        <div></div>
+    </span>
+    <script>
+        function activateBurgerMenu(){
+            var elem = document.getElementById("burger-menu-icon");
+            console.log("called");
+            if(elem.className){
+                elem.removeAttribute("class");
+            } else {
+                elem.setAttribute("class", "activated");
+            }
+        }
+    </script>
+</body>
+</html>
