@@ -1,4 +1,6 @@
+
+navigation
 header
 body
+sidebar
 footer
-navigation
