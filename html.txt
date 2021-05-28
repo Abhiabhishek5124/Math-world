@@ -1,5 +1,5 @@
 navigation
-header
-body
+header->Logo, heading
+body->content1
 sidebar
 footer
